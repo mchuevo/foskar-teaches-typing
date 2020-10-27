@@ -1,0 +1,824 @@
+--Project started on 10/22/2020
+local component = require("component")
+local keyboard = require("keyboard")
+local event = require("event")
+local computer = require("computer")
+
+local rescheck0 = component.gpu.getResolution() == 160, 50
+local rescheck1 = component.gpu.maxResolution() >= 160, 50
+if rescheck1 == false then
+  print("Please upgrade your video card to Tier 3")
+elseif rescheck0 == false then
+  component.gpu.setResolution(160, 50)
+end
+component.gpu.setBackground(0x00B6FF)
+component.gpu.fill(1,1,160,50," ")
+component.gpu.setBackground(0x0027FF)
+function fill(x,y,w,h)
+  component.gpu.fill(x,y,w,h," ")
+end
+--Note to self: The "x" value can be calculated for the start of each letter with the formula: 8n + (n + 2); n = # of letters on the line.
+--F
+fill(2,2,8,2)
+fill(2,4,3,6)
+fill(5,5,3,2)
+--o
+fill(12,2,6,2)
+fill(11,3,3,6)
+fill(12,8,6,2)
+fill(16,3,3,6)
+--s
+fill(21,2,6,1)
+fill(20,3,8,1)
+fill(20,3,3,3)
+fill(21,5,6,2)
+fill(25,6,3,3)
+fill(20,8,8,1)
+fill(21,9,6,1)
+--k
+fill(29,2,3,8)
+fill(32,5,1,2)
+fill(33,4,2,4)
+fill(34,3,2,2)
+fill(35,2,2,2)
+fill(34,7,2,2)
+fill(35,8,2,2)
+--a
+fill(38,3,3,7)
+fill(39,2,6,2)
+fill(43,3,3,7)
+fill(41,6,2,2)
+--r
+fill(47,2,3,8)
+fill(50,2,4,2)
+fill(50,5,4,2)
+fill(52,3,3,3)
+fill(52,7,3,3)
+--T
+component.gpu.setBackground(0x8E00FF)
+fill(56,2,7,2)
+fill(58,4,3,6)
+--h
+fill(65,2,3,8)
+fill(68,5,2,2)
+fill(70,2,3,8)
+--e
+fill(74,2,3,8)
+fill(77,2,5,2)
+fill(77,5,3,2)
+fill(77,8,5,2)
+--F
+component.gpu.setBackground(0x0027FF)
+fill(83,2,3,8)
+fill(83,2,8,2)
+fill(83,5,6,2)
+--u
+fill(92,2,3,7)
+fill(97,2,3,7)
+fill(93,8,6,2)
+--n
+fill(101,2,3,8)
+fill(106,2,3,8)
+fill(104,3,1,5)
+fill(105,5,1,4)
+--n
+fill(110,2,3,8)
+fill(115,2,3,8)
+fill(113,3,1,5)
+fill(114,5,1,4)
+--y
+fill(119,2,3,3)
+fill(124,2,3,3)
+fill(120,5,1,1)
+fill(125,5,1,1)
+fill(121,5,4,2)
+fill(122,5,2,5)
+--F
+component.gpu.setBackground(0x8E00FF)
+fill(128,2,3,8)
+fill(128,2,8,2)
+fill(128,5,6,2)
+--i
+fill(137,2,3,8)
+--s
+fill(143,2,6,1)
+fill(142,3,8,1)
+fill(142,3,3,3)
+fill(143,5,6,2)
+fill(147,6,3,3)
+fill(142,8,8,1)
+fill(143,9,6,1)
+--h
+fill(152,2,3,8)
+fill(155,5,2,2)
+fill(157,2,3,8)
+--next line; 11 as y is the same as 2 as y on the first line.
+--T
+component.gpu.setBackground(0x0027FF)
+fill(26,11,7,2)
+fill(28,13,3,6)
+--e
+fill(35,11,3,8)
+fill(35,11,8,2)
+fill(35,14,6,2)
+fill(35,17,8,2)
+--a
+fill(44,12,3,7)
+fill(45,11,6,2)
+fill(49,12,3,7)
+fill(47,15,2,2)
+--c
+fill(53,12,3,6)
+fill(54,11,6,2)
+fill(58,12,3,2)
+fill(54,17,6,2)
+fill(58,16,3,2)
+--h
+fill(62,11,3,8)
+fill(67,11,3,8)
+fill(65,14,2,2)
+--e
+fill(71,11,3,8)
+fill(71,11,8,2)
+fill(71,14,6,2)
+fill(71,17,8,2)
+--s
+fill(81,11,6,1)
+fill(80,12,8,1)
+fill(80,12,3,3)
+fill(81,14,6,2)
+fill(85,15,3,3)
+fill(80,17,8,1)
+fill(81,18,6,1)
+--T
+component.gpu.setBackground(0x8E00FF)
+fill(89,11,7,2)
+fill(91,13,3,6)
+--y
+fill(98,11,3,3)
+fill(103,11,3,3)
+fill(99,14,1,1)
+fill(104,14,1,1)
+fill(100,14,4,2)
+fill(101,14,2,5)
+--p
+fill(107,11,3,8)
+fill(107,11,7,2)
+fill(110,14,4,2)
+fill(112,12,3,3)
+--i
+fill(116,11,3,8)
+--n
+fill(120,11,3,8)
+fill(125,11,3,8)
+fill(123,12,1,5)
+fill(124,14,1,4)
+--g
+fill(129,12,3,6)
+fill(130,11,6,2)
+fill(130,17,6,2)
+fill(134,12,3,2)
+fill(134,15,3,3)
+fill(133,15,1,1)
+--Foskar
+component.gpu.setBackground(0x00B6FF)
+function renderPic(filename, x, y)
+  file = io.open(filename, r)
+  io.input(file)
+  local resX = tonumber(io.read(2))
+  file:seek(cur,1)
+  local resY = tonumber(io.read(2))
+  local pixelX = 1
+  local pixelY = 1
+  while pixelY <= resY do
+    while pixelX <= resX do
+      local realPixelX = pixelX + x - 1
+      local realPixelY = pixelY + y - 1
+      file:seek(cur,1)
+      local backColor = io.read("*number")
+      component.gpu.setBackground(backColor)
+      component.gpu.fill(realPixelX,realPixelY,1,1," ")
+      pixelX = pixelX + 1
+    end
+    if pixelX >= resX then
+      pixelY = pixelY + 1
+      pixelX = 1
+    end
+  end
+end
+renderPic("./foskar.sprite", 1, 21)
+--component.gpu.setBackground(0xF00F0f) --render this instead of the line above to speed up the game
+--fill(1,21,60,26) --render this instead of the line above to speed up the game
+--speechBox
+component.gpu.setBackground(0x000000)
+fill(62,40,1,1)
+fill(63,41,2,1)
+fill(65,42,2,1)
+fill(67,42,1,2)
+fill(63,39,2,1)
+fill(65,38,2,1)
+fill(67,36,1,3)
+fill(67,36,75,1)
+fill(67,44,75,1)
+fill(142,36,1,9)
+component.gpu.setBackground(0xFFFFFF)
+fill(63,40,5,1)
+fill(65,41,3,1)
+fill(65,39,3,1)
+fill(68,37,74,7)
+--speechBoxText
+--P
+component.gpu.setBackground(0x0027FF)
+fill(69,38,1,5)
+fill(69,38,4,1)
+fill(69,40,4,1)
+fill(73,39,1,1)
+--r
+fill(75,38,1,5)
+fill(76,39,1,1)
+fill(77,38,2,1)
+fill(78,39,1,1)
+--e
+fill(80,39,1,3)
+fill(81,38,3,1)
+fill(80,40,5,1)
+fill(81,42,4,1)
+fill(84,39,1,1)
+--s
+fill(86,39,1,1)
+fill(87,38,4,1)
+fill(87,40,3,1)
+fill(90,41,1,1)
+fill(86,42,4,1)
+--s
+fill(92,39,1,1)
+fill(93,38,4,1)
+fill(93,40,3,1)
+fill(96,41,1,1)
+fill(92,42,4,1)
+--next word start:a
+fill(102,38,4,1)
+fill(106,39,1,4)
+fill(102,41,1,1)
+fill(103,40,4,1)
+fill(103,42,4,1)
+--n
+fill(108,38,4,1)
+fill(108,38,1,5)
+fill(112,39,1,4)
+--y
+fill(114,38,1,2)
+fill(115,40,4,1)
+fill(114,42,4,1)
+fill(118,38,1,4)
+--next word start:k
+fill(124,38,1,5)
+fill(124,40,3,1)
+fill(127,39,1,1)
+fill(127,41,1,1)
+fill(128,38,1,1)
+fill(128,42,1,1)
+--e
+fill(130,39,1,3)
+fill(131,38,3,1)
+fill(130,40,5,1)
+fill(131,42,4,1)
+fill(134,39,1,1)
+--y
+fill(136,38,1,2)
+fill(137,40,4,1)
+fill(136,42,4,1)
+fill(140,38,1,4)
+--title screen drawing complete, progressing to next screen
+while event.pull("key_down") == " " do
+  os.sleep(0.001)
+end
+component.gpu.setBackground(0x00B6FF)
+os.execute("clear")
+--foskar
+renderPic("./foskar.sprite",1,1)
+--component.gpu.setBackground(0xF00F0f) --render this instead of the line above to speed up the game
+--fill(1,1,60,26) --render this instead of the line above to speed up the game
+--speechBox
+component.gpu.setBackground(0x000000)
+fill(62,20,1,1)
+fill(63,21,2,1)
+fill(65,22,2,1)
+fill(67,22,1,4)
+fill(63,19,2,1)
+fill(65,18,2,1)
+fill(67,14,1,5)
+fill(67,14,72,1)
+fill(67,25,72,1)
+fill(138,14,1,12)
+component.gpu.setBackground(0xFFFFFF)
+fill(63,20,5,1)
+fill(65,21,3,1)
+fill(65,19,3,1)
+fill(68,15,70,10)
+--speechBoxText
+--T
+component.gpu.setBackground(0x0027FF)
+fill(69,16,7,2)
+fill(71,16,3,8)
+--y
+fill(77,16,3,3)
+fill(78,19,1,1)
+fill(82,16,3,3)
+fill(83,19,1,1)
+fill(79,19,4,2)
+fill(80,19,2,5)
+--p
+fill(86,16,3,8)
+fill(86,16,7,2)
+fill(91,17,3,3)
+fill(86,19,7,2)
+--e
+fill(95,16,8,2)
+fill(95,16,3,8)
+fill(95,19,6,2)
+fill(95,22,8,2)
+--next word
+--"
+fill(108,16,2,2)
+fill(109,18,1,1)
+fill(111,16,2,2)
+fill(112,18,1,1)
+--G
+fill(114,17,3,6)
+fill(115,16,6,2)
+fill(115,22,6,2)
+fill(119,17,3,2)
+fill(119,20,3,3)
+fill(118,20,1,1)
+--O
+fill(123,17,3,6)
+fill(124,16,6,2)
+fill(124,22,6,2)
+fill(128,17,3,6)
+--"
+fill(132,16,2,2)
+fill(132,18,1,1)
+fill(135,16,2,2)
+fill(135,18,1,1)
+--UserTyping
+--line
+component.gpu.setBackground(0x000000)
+fill(66,41,27,2)
+--when the user types "G"
+while keyboard.isKeyDown("g") ~= true do
+  os.sleep(0.001)
+end
+component.gpu.setBackground(0x0027FF)
+fill(72,32,6,2)
+fill(71,33,3,6)
+fill(76,33,3,2)
+fill(72,38,6,2)
+fill(76,36,3,3)
+fill(75,36,1,1)
+--when the user types "O"
+while keyboard.isKeyDown("o") ~= true do
+  os.sleep(0.001)
+end
+fill(80,33,3,6)
+fill(81,32,6,2)
+fill(81,38,6,2)
+fill(85,33,3,6)
+--credits
+os.sleep(1)
+component.gpu.setBackground(0x000000)
+os.execute("clear")
+--first screen:
+--"The End"
+function credit1(colorcode)
+  component.gpu.setBackground(colorcode)
+  --T
+  fill(50,21,7,2)
+  fill(52,21,3,8)
+  --h
+  fill(58,21,3,8)
+  fill(58,24,5,2)
+  fill(63,21,3,8)
+  --e
+  fill(67,21,8,2)
+  fill(67,21,3,8)
+  fill(67,24,6,2)
+  fill(67,27,8,2)
+  --E
+  fill(80,21,8,2)
+  fill(80,21,3,8)
+  fill(80,24,6,2)
+  fill(80,27,8,2)
+  --n
+  fill(89,21,3,8)
+  fill(92,22,1,5)
+  fill(93,24,1,4)
+  fill(94,21,3,8)
+  --d
+  fill(98,21,7,2)
+  fill(98,21,3,8)
+  fill(98,27,7,2)
+  fill(103,22,3,6)
+end
+function delay()
+  os.sleep(0.15)
+end
+function creditsFadeIn(creditNum)
+  creditNum(0x101010)
+  delay()
+  creditNum(0x202020)
+  delay()
+  creditNum(0x303030)
+  delay()
+  creditNum(0x404040)
+  delay()
+  creditNum(0x505050)
+  delay()
+  creditNum(0x606060)
+  delay()
+  creditNum(0x707070)
+  delay()
+  creditNum(0x808080)
+  delay()
+  creditNum(0x909090)
+  delay()
+  creditNum(0xA0A0A0)
+  delay()
+  creditNum(0xB0B0B0)
+  delay()
+  creditNum(0xC0C0C0)
+  delay()
+  creditNum(0xD0D0D0)
+  delay()
+  creditNum(0xE0E0E0)
+  delay()
+  creditNum(0xF0F0F0)
+  delay()
+  creditNum(0xFFFFFF)
+end
+function creditsFadeOut(creditNum)
+  creditNum(0xFFFFFF)
+  delay()
+  creditNum(0xF0F0F0)
+  delay()
+  creditNum(0xE0E0E0)
+  delay()
+  creditNum(0xD0D0D0)
+  delay()
+  creditNum(0xC0C0C0)
+  delay()
+  creditNum(0xB0B0B0)
+  delay()
+  creditNum(0xA0A0A0)
+  delay()
+  creditNum(0x909090)
+  delay()
+  creditNum(0x808080)
+  delay()
+  creditNum(0x707070)
+  delay()
+  creditNum(0x606060)
+  delay()
+  creditNum(0x505050)
+  delay()
+  creditNum(0x404040)
+  delay()
+  creditNum(0x303030)
+  delay()
+  creditNum(0x202020)
+  delay()
+  creditNum(0x101010)
+  delay()
+  creditNum(0x000000)
+end
+creditsFadeIn(credit1)
+os.sleep(3)
+creditsFadeOut(credit1)
+--second screen: 
+--"Game Finished on:
+--10/25/2020"
+function credit2(colorcode)
+  --G
+  component.gpu.setBackground(colorcode)
+  fill(15,17,3,6)
+  fill(16,16,6,2)
+  fill(20,17,3,2)
+  fill(16,22,6,2)
+  fill(20,20,3,3)
+  fill(19,20,1,1)
+  --a
+  fill(24,17,3,7)
+  fill(24,20,5,2)
+  fill(25,16,6,2)
+  fill(29,17,3,7)
+  --m
+  fill(33,16,3,8)
+  fill(33,18,6,2)
+  fill(36,17,1,1)
+  fill(38,17,1,1)
+  fill(39,16,3,8)
+  --e
+  fill(43,16,8,2)
+  fill(43,16,3,8)
+  fill(43,19,6,2)
+  fill(43,22,8,2)
+  --F
+  fill(56,16,8,2)
+  fill(56,16,3,8)
+  fill(56,19,6,2)
+  --i
+  fill(65,16,3,8)
+  --n
+  fill(69,16,3,8)
+  fill(72,17,1,5)
+  fill(73,19,1,4)
+  fill(74,16,3,8)
+  --i
+  fill(78,16,3,8)
+  --s
+  fill(82,17,8,1)
+  fill(83,16,6,1)
+  fill(82,18,3,1)
+  fill(82,19,7,1)
+  fill(83,20,7,1)
+  fill(87,21,3,1)
+  fill(82,22,8,1)
+  fill(83,23,6,1)
+  --h
+  fill(91,16,3,8)
+  fill(91,19,5,2)
+  fill(96,16,3,8)
+  --e
+  fill(100,16,8,2)
+  fill(100,16,3,8)
+  fill(100,19,6,2)
+  fill(100,22,8,2)
+  --d
+  fill(109,16,7,2)
+  fill(109,16,3,8)
+  fill(109,22,7,2)
+  fill(114,17,3,6)
+  --O
+  fill(122,17,3,6)
+  fill(123,16,6,2)
+  fill(123,22,6,2)
+  fill(127,17,3,6)
+  --n
+  fill(131,16,3,8)
+  fill(134,17,1,5)
+  fill(135,19,1,4)
+  fill(136,16,3,8)
+  --:
+  fill(140,18,2,2)
+  fill(140,22,2,2)
+  --next line: 1
+  fill(39,27,1,1)
+  fill(40,26,1,2)
+  fill(41,25,3,8)
+  --0
+  fill(45,26,3,6)
+  fill(46,25,6,2)
+  fill(46,31,6,2)
+  fill(50,26,3,6)
+  --/
+  fill(54,31,2,2)
+  fill(55,29,2,2)
+  fill(56,27,2,2)
+  fill(57,25,2,2)
+  --2
+  fill(60,26,3,2)
+  fill(61,25,6,2)
+  fill(65,26,3,2)
+  fill(64,28,3,1)
+  fill(62,29,3,1)
+  fill(60,30,3,1)
+  fill(60,31,8,2)
+  --5
+  fill(69,25,8,2)
+  fill(69,27,3,1)
+  fill(69,28,7,2)
+  fill(74,29,3,2)
+  fill(69,31,8,1)
+  fill(70,32,6,1)
+  --/
+  fill(78,31,2,2)
+  fill(79,29,2,2)
+  fill(80,27,2,2)
+  fill(81,25,2,2)
+  --2
+  fill(84,26,3,2)
+  fill(85,25,6,2)
+  fill(89,26,3,2)
+  fill(88,28,3,1)
+  fill(86,29,3,1)
+  fill(84,30,3,1)
+  fill(84,31,8,2)
+  --0
+  fill(93,26,3,6)
+  fill(94,25,6,2)
+  fill(94,31,6,2)
+  fill(98,26,3,6)
+  --2
+  fill(102,26,3,2)
+  fill(103,25,6,2)
+  fill(107,26,3,2)
+  fill(106,28,3,1)
+  fill(104,29,3,1)
+  fill(102,30,3,1)
+  fill(102,31,8,2)
+  --0
+  fill(111,26,3,6)
+  fill(112,25,6,2)
+  fill(112,31,6,2)
+  fill(116,26,3,6)
+end
+creditsFadeIn(credit2)
+os.sleep(3)
+creditsFadeOut(credit2)
+--third screen:
+--"Made by:
+--bobasrty"
+function credit3(colorcode)
+  component.gpu.setBackground(colorcode)
+  --M
+  fill(49,16,3,8)
+  fill(52,17,1,3)
+  fill(53,18,1,2)
+  fill(54,17,1,3)
+  fill(55,16,3,8)
+  --a
+  fill(59,17,3,7)
+  fill(59,20,5,2)
+  fill(60,16,6,2)
+  fill(64,17,3,7)
+  --d
+  fill(68,16,7,2)
+  fill(68,16,3,8)
+  fill(68,22,7,2)
+  fill(73,17,3,6)
+  --e
+  fill(77,16,8,2)
+  fill(77,16,3,8)
+  fill(77,19,6,2)
+  fill(77,22,8,2)
+  --B
+  fill(90,16,7,2)
+  fill(90,16,3,8)
+  fill(90,19,7,2)
+  fill(90,22,7,2)
+  fill(95,17,3,2)
+  fill(95,21,3,2)
+  --y
+  fill(99,16,3,3)
+  fill(104,16,3,3)
+  fill(100,19,6,1)
+  fill(101,20,4,1)
+  fill(102,21,2,3)
+  --:
+  fill(108,18,2,2)
+  fill(108,21,2,2)
+  --next line: B
+  fill(49,25,3,8)
+  fill(49,25,7,2)
+  fill(49,28,7,2)
+  fill(49,31,7,2)
+  fill(54,26,3,2)
+  fill(54,30,3,2)
+  --o
+  fill(58,26,3,6)
+  fill(59,25,6,2)
+  fill(59,31,6,2)
+  fill(63,26,3,6)
+  --b
+  fill(67,25,3,8)
+  fill(67,25,7,2)
+  fill(67,28,7,2)
+  fill(67,31,7,2)
+  fill(72,26,3,2)
+  fill(72,30,3,2)
+  --a
+  fill(76,26,3,7)
+  fill(77,25,6,2)
+  fill(76,29,5,2)
+  fill(81,26,3,7)
+  --s
+  fill(85,26,8,1)
+  fill(86,25,6,1)
+  fill(85,27,3,1)
+  fill(85,28,7,1)
+  fill(86,29,7,1)
+  fill(90,30,3,1)
+  fill(85,31,8,1)
+  fill(86,32,6,1)
+  --r
+  fill(94,25,7,2)
+  fill(94,25,3,8)
+  fill(94,28,7,2)
+  fill(99,26,3,3)
+  fill(99,30,3,3)
+  --t
+  fill(103,25,7,2)
+  fill(105,27,3,6)
+  --y
+  fill(111,25,3,3)
+  fill(116,25,3,3)
+  fill(112,28,6,1)
+  fill(113,29,4,1)
+  fill(114,30,2,3)
+end
+creditsFadeIn(credit3)
+os.sleep(3)
+creditsFadeOut(credit3)
+--fourth screen:
+--"Thanks for playing!"
+function credit4(colorcode)
+  component.gpu.setBackground(colorcode)
+  --T
+  fill(5,21,7,2)
+  fill(7,23,3,6)
+  --h
+  fill(13,21,3,8)
+  fill(13,24,5,2)
+  fill(18,21,3,8)
+  --a
+  fill(22,22,3,7)
+  fill(23,21,6,2)
+  fill(22,25,5,2)
+  fill(27,22,3,7)
+  --n
+  fill(31,21,3,8)
+  fill(34,22,1,5)
+  fill(35,24,1,4)
+  fill(36,21,3,8)
+  --k
+  fill(40,21,3,8)
+  fill(43,24,3,2)
+  fill(44,23,3,1)
+  fill(45,22,3,1)
+  fill(46,21,2,1)
+  fill(44,26,3,1)
+  fill(45,27,3,1)
+  fill(46,28,2,1)
+  --s
+  fill(49,22,8,1)
+  fill(50,21,6,1)
+  fill(49,23,3,1)
+  fill(49,24,7,1)
+  fill(50,25,7,1)
+  fill(54,26,3,1)
+  fill(49,27,8,1)
+  fill(50,28,6,1)
+  --F
+  fill(62,21,8,2)
+  fill(62,21,3,8)
+  fill(62,24,6,2)
+  --o
+  fill(71,22,3,6)
+  fill(72,21,6,2)
+  fill(72,27,6,2)
+  fill(76,22,3,6)
+  --r
+  fill(80,21,7,2)
+  fill(80,21,3,8)
+  fill(80,24,7,2)
+  fill(85,22,3,3)
+  fill(85,26,3,3)
+  --P
+  fill(93,21,7,2)
+  fill(93,21,3,8)
+  fill(93,24,7,2)
+  fill(98,22,3,3)
+  --l
+  fill(102,21,3,8)
+  fill(102,27,8,2)
+  --a
+  fill(111,22,3,7)
+  fill(112,21,6,2)
+  fill(111,25,5,2)
+  fill(116,22,3,7)
+  --y
+  fill(120,21,3,3)
+  fill(125,21,3,3)
+  fill(121,24,6,1)
+  fill(122,25,4,1)
+  fill(123,26,2,3)
+  --i
+  fill(129,21,3,8)
+  --n
+  fill(133,21,3,8)
+  fill(136,22,1,5)
+  fill(137,24,1,4)
+  fill(138,21,3,8)
+  --g
+  fill(142,22,3,6)
+  fill(143,21,6,2)
+  fill(143,27,6,2)
+  fill(147,22,3,2)
+  fill(147,25,3,3)
+  fill(146,25,1,1)
+  --!
+  fill(151,21,2,5)
+  fill(151,27,2,2)
+end
+creditsFadeIn(credit4)
+os.sleep(1)
