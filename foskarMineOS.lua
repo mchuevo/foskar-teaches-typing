@@ -489,7 +489,7 @@ function creditsFadeOut(creditNum)
   creditNum(0x000000)
 end
 creditsFadeIn(credit1)
-os.sleep(3)
+event.sleep(3)
 creditsFadeOut(credit1)
 --second screen: 
 --"Game Finished on:
@@ -630,7 +630,7 @@ function credit2(colorcode)
   fill(116,26,3,6)
 end
 creditsFadeIn(credit2)
-os.sleep(3)
+event.sleep(3)
 creditsFadeOut(credit2)
 --third screen:
 --"Made by:
@@ -724,7 +724,7 @@ function credit3(colorcode)
   fill(114,30,2,3)
 end
 creditsFadeIn(credit3)
-os.sleep(3)
+event.sleep(3)
 creditsFadeOut(credit3)
 --fourth screen:
 --"Thanks for playing!"
@@ -818,4 +818,4 @@ function credit4(colorcode)
   fill(151,27,2,2)
 end
 creditsFadeIn(credit4)
-os.sleep(1)
+event.sleep(1)
