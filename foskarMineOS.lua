@@ -818,4 +818,4 @@ function credit4(colorcode)
   fill(151,27,2,2)
 end
 creditsFadeIn(credit4)
-event.sleep(1)
+event.sleep(3)
