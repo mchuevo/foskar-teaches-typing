@@ -262,15 +262,12 @@ fill(106,39,1,4)
 fill(102,41,1,1)
 fill(103,40,4,1)
 fill(103,42,4,1)
---n
-fill(108,38,4,1)
+--L
 fill(108,38,1,5)
-fill(112,39,1,4)
---y
-fill(114,38,1,2)
-fill(115,40,4,1)
-fill(114,42,4,1)
-fill(118,38,1,4)
+fill(112,42,5,1)
+--T
+fill(114,38,5,1)
+fill(116,38,1,5)
 --next word start:k
 fill(124,38,1,5)
 fill(124,40,3,1)
@@ -290,11 +287,11 @@ fill(137,40,4,1)
 fill(136,42,4,1)
 fill(140,38,1,4)
 --title screen drawing complete, progressing to next screen
-while event.pull("key_down") == " " do
-  os.sleep(0.001)
+while keyboard.isAltDown() == true do
+  event.sleep(0.001)
 end
 component.gpu.setBackground(0x00B6FF)
-os.execute("clear")
+fill(1,1,160,50)
 --foskar
 renderPic("./foskar.sprite",1,1)
 --component.gpu.setBackground(0xF00F0f) --render this instead of the line above to speed up the game
