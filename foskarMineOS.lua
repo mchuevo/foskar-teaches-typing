@@ -264,7 +264,7 @@ fill(103,40,4,1)
 fill(103,42,4,1)
 --L
 fill(108,38,1,5)
-fill(112,42,5,1)
+fill(108,42,5,1)
 --T
 fill(114,38,5,1)
 fill(116,38,1,5)
@@ -363,7 +363,7 @@ fill(135,18,1,1)
 component.gpu.setBackground(0x000000)
 fill(66,41,27,2)
 --when the user types "G"
-while keyboard.isKeyDown("g") ~= true do
+while keyboard.isKeyDown(keyboard.keys.g) ~= true do
   os.sleep(0.001)
 end
 component.gpu.setBackground(0x0027FF)
@@ -374,7 +374,7 @@ fill(72,38,6,2)
 fill(76,36,3,3)
 fill(75,36,1,1)
 --when the user types "O"
-while keyboard.isKeyDown("o") ~= true do
+while keyboard.isKeyDown(keyboard.keys.o) ~= true do
   os.sleep(0.001)
 end
 fill(80,33,3,6)
