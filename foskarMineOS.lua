@@ -363,8 +363,8 @@ fill(135,18,1,1)
 component.gpu.setBackground(0x000000)
 fill(66,41,27,2)
 --when the user types "G"
-while keyboard.isKeyDown(keyboard.keys.g) ~= true do
-  os.sleep(0.001)
+while keyboard.isKeyDown(34) ~= true do
+  event.sleep(0.001)
 end
 component.gpu.setBackground(0x0027FF)
 fill(72,32,6,2)
@@ -374,17 +374,17 @@ fill(72,38,6,2)
 fill(76,36,3,3)
 fill(75,36,1,1)
 --when the user types "O"
-while keyboard.isKeyDown(keyboard.keys.o) ~= true do
-  os.sleep(0.001)
+while keyboard.isKeyDown(24) ~= true do
+  event.sleep(0.001)
 end
 fill(80,33,3,6)
 fill(81,32,6,2)
 fill(81,38,6,2)
 fill(85,33,3,6)
 --credits
-os.sleep(1)
+event.sleep(1)
 component.gpu.setBackground(0x000000)
-os.execute("clear")
+fill(1,1,160,50)
 --first screen:
 --"The End"
 function credit1(colorcode)
@@ -418,7 +418,7 @@ function credit1(colorcode)
   fill(103,22,3,6)
 end
 function delay()
-  os.sleep(0.15)
+  event.sleep(0.15)
 end
 function creditsFadeIn(creditNum)
   creditNum(0x101010)
